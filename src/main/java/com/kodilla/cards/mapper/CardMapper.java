@@ -11,10 +11,8 @@ public class CardMapper {
 
     public CardDto mapToCardDto(final Card card) {
         return new CardDto(
-                card.getIddto(),
-                card.getNrb(),
-                card.getCurrency(),
-                card.getAvailableFunds()
+                card.getIdDto(),
+                card.getTypeCard()
         );
     }
 
@@ -25,7 +23,7 @@ public class CardMapper {
     }
 
     public Card mapToCard(CardDto card) {
-        return new Card(card.getId(), card.getNrb(), card.getCurrency(), card.getAvailableFunds());
+        return new Card(card.getId(), card.getTypeCard());
     }
 
 }

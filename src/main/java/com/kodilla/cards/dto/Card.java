@@ -1,15 +1,13 @@
 package com.kodilla.cards.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Builder
 @Entity
 @Table(name = "card")
@@ -18,15 +16,9 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private long iddto;
+    private long idDto;
 
-    @Column(name = "nrb")
-    private String nrb;
-
-    @Column(name = "currency")
-    private String currency;
-
-    @Column(name = "available_funds")
-    private double availableFunds;
+    @Column(name = "type_card")
+    private String typeCard;
 
 }

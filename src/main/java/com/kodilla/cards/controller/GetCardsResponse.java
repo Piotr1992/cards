@@ -1,4 +1,4 @@
-package com.kodilla.cards.controller
+package com.kodilla.cards.controller;
 
 import com.kodilla.cards.dto.CardDto;
 import lombok.AllArgsConstructor;
@@ -9,8 +9,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor(staticName = "of")
 @NoArgsConstructor
-class GetCardsResponse {
+public class GetCardsResponse {
 
-//    private List<CardDto> cards;
+    private List<CardDto> cards;
 
 }

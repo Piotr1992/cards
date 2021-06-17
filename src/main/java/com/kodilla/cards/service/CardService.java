@@ -23,8 +23,7 @@ public class CardService {
     }
 
     public List<CardDto> getCardDto(final Long id) {
-        //return repository.findById(id);
-        return repository.findByIddto(id);
+        return repository.findByIdDto(id);
     }
 
     public void save(Card card) {

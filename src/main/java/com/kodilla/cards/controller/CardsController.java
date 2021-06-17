@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,10 +39,13 @@ public class CardsController {
 
         List<CardDto> cards = cardMapper.mapToCardDtoList(List.of(cardService.getCard(customerId).orElse(new Card())));
         log.info("Card TEST!");
-//        CardDto cards = cardMapper.mapToCardDto(cardService.getCard(customerId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
 
-//        return GetCardsResponse.of(cards);
-        return null;
+        return GetCardsResponse.of(cards);
+    }
+
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void addCard(@RequestBody CardDto card) {
+        cardService.save(cardMapper.mapToCard(card));
     }
 
 }

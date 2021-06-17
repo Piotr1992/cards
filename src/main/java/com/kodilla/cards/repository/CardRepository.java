@@ -19,7 +19,7 @@ public interface CardRepository extends JpaRepository<Card, Long> {
     @Override
     Optional<Card> findById(Long id);
 
-    List<CardDto> findByIddto(Long id);
+    List<CardDto> findByIdDto(Long id);
 
     void deleteById(Long id);
 
